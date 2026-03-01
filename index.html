@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peter Omwandho | Luxury Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#0d0d0d;color:white;scroll-behavior:smooth;overflow-x:hidden;}
+header{padding:60px 20px;text-align:center;background:linear-gradient(135deg,#111,#1c1c1c);}
+header img{width:150px;animation:float 3s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+h1{font-size:42px;background:linear-gradient(45deg,gold,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+nav{background:#111;text-align:center;padding:15px;position:sticky;top:0;z-index:999;}
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:600;transition:0.3s;}
+nav a:hover{color:gold;}
+section{padding:60px 20px;text-align:center;opacity:0;transform:translateY(30px);transition:1s;}
+section.show{opacity:1;transform:translateY(0);}
+.section-dark{background:#141414;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px;}
+.card{background:#1e1e1e;padding:15px;border-radius:15px;transition:0.4s;cursor:pointer;overflow:hidden;position:relative;box-shadow:0 0 10px rgba(255,215,0,0.2);}
+.card:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(255,215,0,0.7);}
+.card img{width:100%;border-radius:15px;display:block;}
+.button{display:inline-block;padding:12px 30px;margin:10px;background:linear-gradient(45deg,gold,#ffd700);color:black;border-radius:30px;text-decoration:none;font-weight:bold;transition:0.3s;}
+.button:hover{background:linear-gradient(45deg,#ffd700,gold);}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:1000;box-shadow:0 0 15px rgba(255,215,0,0.5);}
+.testimonial{max-width:600px;margin:20px auto;font-style:italic;opacity:0;transition:1s;}
+.showT{opacity:1;}
+form{max-width:500px;margin:20px auto;text-align:left;}
+form input, form textarea{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:none;}
+form button{width:100%;padding:12px;background:linear-gradient(45deg,gold,#ffd700);color:black;border:none;border-radius:30px;font-weight:bold;cursor:pointer;transition:0.3s;}
+form button:hover{background:linear-gradient(45deg,#ffd700,gold);}
+.chatbot{position:fixed;bottom:90px;right:20px;width:300px;background:#222;padding:15px;border-radius:15px;display:none;z-index:1000;box-shadow:0 0 20px rgba(255,215,0,0.5);}
+.chatbot input{width:70%;padding:8px;border-radius:8px;border:none;}
+.chatbot button{width:25%;padding:8px;background:linear-gradient(45deg,gold,#ffd700);color:black;border:none;border-radius:8px;cursor:pointer;transition:0.3s;}
+.chatbot button:hover{background:linear-gradient(45deg,#ffd700,gold);}
+#lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;z-index:2000;transition:0.3s;}
+#lightbox img{max-width:90%;max-height:90%;border-radius:15px;transform:scale(0);transition:0.3s;}
+#lightbox span{position:absolute;top:20px;right:30px;font-size:40px;color:white;cursor:pointer;}
+#lightbox.show img{transform:scale(1);}
+</style>
+</head>
+<body>
+
+<header>
+<img src="data:image/jpeg;base64,/9j/" alt="Logo">
+<h1>Peter Omwandho</h1>
+<p>Interactive Premium Graphic Designer</p>
+<a href="https://wa.me/254758560246?text=Hello%20Peter%20I%20need%20professional%20design" class="button">Hire Me</a>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#booking">Booking</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+<h2>About Me</h2>
+<p>I create powerful visual stories. Specializing in branding, event posters, social media graphics, and digital identity.</p>
+<img src="data:image/jpeg;base64,/9j/" width="250" style="margin-top:20px;border-radius:20px;">
+</section>
+
+<section id="services" class="section-dark">
+<h2>Services</h2>
+<div class="grid">
+<div class="card"><h3>Logo Design</h3><p>Creative and professional logos.</p></div>
+<div class="card"><h3>Posters & Flyers</h3><p>Event posters and marketing designs.</p></div>
+<div class="card"><h3>Social Media Graphics</h3><p>Custom content for platforms.</p></div>
+<div class="card"><h3>Branding</h3><p>Visual identity, brand kits.</p></div>
+</div>
+</section>
+
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="grid">
+<div class="card"><img src="data:image/jpeg;base64,/9j/" onclick="openLightbox(this.src)"></div>
+<div class="card"><img src="data:image/jpeg;base64,/9j/" onclick="openLightbox(this.src)"></div>
+</div>
+</section>
+
+<section id="booking" class="section-dark">
+<h2>Book a Service</h2>
+<form id="bookingForm">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<input type="tel" placeholder="Phone Number" required>
+<textarea placeholder="Service Required / Message" required></textarea>
+<button type="submit">Submit Booking</button>
+</form>
+<p id="formMessage"></p>
+</section>
+
+<section id="testimonials">
+<h2>Client Feedback</h2>
+<div class="testimonial showT">“Peter transformed our event visuals beautifully. Highly recommended!”</div>
+<div class="testimonial">“Creative, professional and delivers on time. Amazing designer.”</div>
+</section>
+
+<section id="contact" class="section-dark">
+<h2>Contact</h2>
+<p>Email: omwandhopeter89@gmail.com</p>
+<p>Phone: +254758560246</p>
+<p>Location: Thika, Kenya</p>
+<a href="tel:+254758560246" class="button">Call Now</a>
+<a href="https://wa.me/254758560246" class="button">WhatsApp</a>
+<button class="button" onclick="toggleChat()">Chat AI</button>
+</section>
+
+<a href="https://wa.me/254758560246" class="whatsapp">WhatsApp</a>
+
+<div class="chatbot" id="chatbot">
+<div id="chatContent" style="height:150px;overflow-y:auto;margin-bottom:10px;"></div>
+<input type="text" id="chatInput" placeholder="Type message">
+<button onclick="sendChat()">Send</button>
+</div>
+
+<div id="lightbox">
+<span onclick="closeLightbox()">×</span>
+<img id="lightboxImg" src="">
+</div>
+
+<footer>
+© 2026 Peter Omwandho | Luxury Interactive Graphic Designer | Kenya
+</footer>
+
+<script>
+let sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{sections.forEach(s=>{let top=s.getBoundingClientRect().top;if(top<window.innerHeight-100){s.classList.add('show');}});});
+function openLightbox(src){let lb=document.getElementById('lightbox');document.getElementById('lightboxImg').src=src;lb.style.display='flex';lb.classList.add('show');}
+function closeLightbox(){let lb=document.getElementById('lightbox');lb.style.display='none';lb.classList.remove('show');}
+let testimonials=document.querySelectorAll('.testimonial');let tIndex=0;setInterval(()=>{testimonials[tIndex].classList.remove('showT');tIndex=(tIndex+1)%testimonials.length;testimonials[tIndex].classList.add('showT');},3000);
+document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('formMessage').innerText="Booking sent! I will contact you soon.";this.reset();});
+function toggleChat(){let c=document.getElementById('chatbot');c.style.display=(c.style.display==='none'||c.style.display==='')?'block':'none';}
+function sendChat(){let input=document.getElementById('chatInput').value;let chat=document.getElementById('chatContent');let reply="Thank you for your message. I will reply soon!";input=input.toLowerCase();if(input.includes("logo")){reply="I can create a professional logo for your brand.";}else if(input.includes("poster")){reply="I design eye-catching posters and flyers.";}else if(input.includes("social")){reply="I create engaging social media graphics.";}else if(input.includes("brand")){reply="I can help with complete branding and identity.";}chat.innerHTML+="<div><b>You:</b> "+input+"</div>";chat.innerHTML+="<div><b>AI:</b> "+reply+"</div>";chat.scrollTop=chat.scrollHeight;document.getElementById('chatInput').value='';}
+</script>
+
+</body>
+</html>
